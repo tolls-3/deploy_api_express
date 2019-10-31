@@ -14,6 +14,9 @@ app.use(express.static(__dirname + "/friends/build"))
 app.use(express.json());
 app.use(cors());
 
+app.get("/",(req, res)=>{
+  res.sendFile(__dirname + "/friends/build/index.html")
+})
 app.get("/api/friends", (req, res) => {
   res.json(friends);
 });
