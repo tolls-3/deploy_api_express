@@ -12,7 +12,7 @@ const friends = [
 app.use(express.json());
 app.use(cors());
 
-app.get("/api/friends", (req, res, next) => {
+app.get("/api/friends", (req, res) => {
   res.json(friends);
 });
 
