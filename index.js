@@ -9,6 +9,8 @@ const friends = [
   { id: 2, name: "Pere" },
   { id: 3, name: "Megan" }
 ];
+
+app.use(express.static(__dirname + ""))
 app.use(express.json());
 app.use(cors());
 
