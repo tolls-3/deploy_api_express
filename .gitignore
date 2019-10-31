@@ -1,4 +1,4 @@
 # node_modules
 node_modules/
-# dot env
+# global dot env
 /.env
