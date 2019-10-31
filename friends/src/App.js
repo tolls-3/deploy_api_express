@@ -3,12 +3,15 @@ import logo from "./logo.svg";
 import axios from "axios";
 import "./App.css";
 
+const baseUrl =
+  process.env.NODE_ENV === "development" ? "http://localhost:4000" : "";
+
 function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     axios
-      .get((process.env.REACT_APP_API || "") + "/api/friends")
+      .get(baseUrl + "/api/friends")
       .then(res => {
         setData(res.data);
       })
@@ -21,6 +24,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{data && data[0].name}</p>
+        Hello
         <a
           className="App-link"
           href="https://reactjs.org"
